@@ -1,0 +1,29 @@
+header {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(3, 1fr);
+}
+
+.title {
+text-align: center;
+}
+
+h1 {
+    font-size: 55px;
+    margin-bottom: 0;
+}
+
+h2{
+    margin-top: 0px;
+}
+
+.martini {
+    height: 120px;
+    width: 120px;
+}
+
+.login {
+    font-size: medium;
+    height: 30px;
+    width: 120px;
+}
