@@ -1,0 +1,22 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+  }
+
+  .submitButton {
+    margin-top: 20px;
+    font-size: medium;
+    height: 30px;
+    width: 120px;
+  }
+
+  .input{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+
+  }
+  

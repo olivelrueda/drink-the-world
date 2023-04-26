@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom'
 
 import useServer from "../hooks/useServer"
-import styles from './login.module.css'
+import styles from './signup.module.css'
 
-export default function Login() {
+export default function Signup() {
     const { post } = useServer()
     const navigate = useNavigate()
 
@@ -11,13 +11,14 @@ export default function Login() {
         e.preventDefault()
 
         const credentials = Object.fromEntries(new FormData(e.target))
-        const { data } = await post({ url: '/users/login', body: credentials })
-        if (data) return navigate('/home')
+        const { data } = await post({ url: '/users', body: credentials })
+        if (data) return navigate('/login')
     }
 
     return <>
         <form className={styles.form} onSubmit={handleSubmit}>
         <div>
+          <div>Crear cuenta nueva</div>  
             <div className={styles.input}>
             <label htmlFor="email" className={styles.label}>Correo</label>
             <input
@@ -44,7 +45,7 @@ export default function Login() {
         </div>
 
         <nav>
-            <button type="submit" className={styles.submitButton}>Iniciar Sesión</button>
+            <button type="submit" className={styles.submitButton}>Sign up</button>
         </nav>
         </form>
     </>
