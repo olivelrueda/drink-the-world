@@ -15,45 +15,45 @@ export default function Login() {
         if (data) return navigate('/')
     }
 
-    return <>
-       
+return <>
+    <div className={styles.container}>
         <form className={styles.form} onSubmit={handleSubmit}>
-        <img className={styles.isotipo} src="/src/assets/images/4.png" alt="" />
-        <div className={styles.tit}>
-        <h2>Login</h2>
-        </div>
-        <div>
-            <div className={styles.input}>
-            <label htmlFor="email" className={styles.label}>Correo</label>
-            <input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                placeholder="nombre@ejemplo.com"
-            />
+            <img className={styles.isotipo} src="/src/assets/images/4.png" alt="" />
+            <div className={styles.tit}>
+            <h2>Login</h2>
+            </div>
+            <div>
+                <div className={styles.input}>
+                <label htmlFor="email" className={styles.label}>Correo</label>
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    required
+                    placeholder="nombre@ejemplo.com"
+                />
+                </div>
+
+                <div className={styles.input}>
+                <label htmlFor="password" className={styles.label}>Contraseña</label>
+                <input
+                    id="password"
+                    name="pwd"
+                    type="password"
+                    autoComplete="password"
+                    required
+                    placeholder="******"
+                />
+                </div>
             </div>
 
-            <div className={styles.input}>
-            <label htmlFor="password" className={styles.label}>Contraseña</label>
-            <input
-                id="password"
-                name="pwd"
-                type="password"
-                autoComplete="password"
-                required
-                placeholder="******"
-            />
+            <div>
+                <button type="submit" className={styles.submitButton}>Iniciar Sesión</button>
             </div>
-        </div>
-
-        <div>
-            <button type="submit" className={styles.submitButton}>Iniciar Sesión</button>
-        </div>
-
-        <NavLink className={styles.registro} to='/registro'>Registrate</NavLink>
-        
+            <p className={styles.p}> ¿Aun no tienes cuenta?</p>
+            <NavLink className={styles.registro} to='/registro'>Registrate</NavLink>
         </form>
-    </>
+    </div>
+</>
 }

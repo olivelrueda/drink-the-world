@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
+import { Link } from 'react-router-dom'
 
 import useServer from "../hooks/useServer"
 import styles from './registro.module.css'
@@ -51,7 +52,7 @@ export default function Registro() {
         </div>
 
         <nav>
-            <button type="submit" className={styles.registro}>Registrate</button>
+            <button type="submit" className={styles.registro}>Regístrate</button>
         </nav>
         </form>
     </>
