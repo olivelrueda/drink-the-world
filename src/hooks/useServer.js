@@ -5,9 +5,10 @@ import useAuth from './useAuth.js';
 function useServer() {
   const { token, setUser } = useAuth();
   const handleResponse = ({ data, loading, error }) => {
-    if (data?.status && data?.message === 'Login' ) {
+    
+    if (data?.status === 'ok' && data?.data?.token ) {
       console.log(data)
-      setUser({ ...data.data });
+      setUser({ token: data?.data?.token });
     }
 
     if (error && error.status === 'Email o password no correctos'  ) {

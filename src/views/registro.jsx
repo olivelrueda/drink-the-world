@@ -47,8 +47,9 @@ export default function Registro() {
         </div>
 
         <nav>
-            <button type="submit" className={styles.submitButton}>Iniciar sesión</button>
+            <button type="submit" className={styles.submitButton}>Registrate</button>
         </nav>
         </form>
     </>
-}
+/*     Generar toast anunciando que se ha hecho el registro satisfactoria y indicando que deben iniciar sesion que su nueva cuenta 
+ */}
