@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
+import Notifications from './components/Notifications'
 
 // Views
 import Home from './views/home'
@@ -9,6 +10,7 @@ export default function App() {
 
   return (
     <>
+      <Notifications />
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<Login/>}/>

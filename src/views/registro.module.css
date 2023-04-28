@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh; 
+    background-color: rgb(40, 39, 39);
   }
 
   .submitButton {
@@ -24,4 +25,15 @@
     height: 100px;
     width: 100px;
   }
+
+  .registro{
+    font-size: medium;
+    background-color: #2f2f2e;
+    border-color: goldenrod;
+    height: 30px;
+    width: 120px;
+    margin-right: 20px;
+    margin-top: 100px;
+}
+  
   

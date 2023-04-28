@@ -1,4 +1,6 @@
 import { toast } from 'sonner';
+import jwt_decode from "jwt-decode"
+
 import httpService from '../services/httpService.js';
 import useAuth from './useAuth.js';
 
@@ -7,8 +9,12 @@ function useServer() {
   const handleResponse = ({ data, loading, error }) => {
     
     if (data?.status === 'ok' && data?.data?.token ) {
-      console.log(data)
-      setUser({ token: data?.data?.token });
+      const userData = {
+        user: jwt_decode(data.data.token),
+        token: data.data.token
+      }
+
+      setUser(userData);
     }
 
     if (error && error.status === 'Email o password no correctos'  ) {

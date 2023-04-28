@@ -6,6 +6,8 @@ const AuthProvider = ({ children }) => {
   const localUser = JSON.parse(localStorage.getItem('user')) || {}
   const [currentUser, setCurrentUser] = useState(localUser)
 
+  console.log(currentUser)
+
   const setUserHandler = (user = {}) => {
     if (isEmpty(user)) return
 

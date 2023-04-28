@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'sonner'
 
 import useServer from "../hooks/useServer"
 import styles from './registro.module.css'
@@ -9,10 +10,13 @@ export default function Registro() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-
+        
         const credentials = Object.fromEntries(new FormData(e.target))
         const { data } = await post({ url: '/users', body: credentials })
-        if (data) return navigate('/')
+        if (data) {
+            toast.success('Se ha creado el usuario, por favor inicia sesión')
+            return navigate('/login')
+        }
     }
 
     return <>
@@ -47,7 +51,7 @@ export default function Registro() {
         </div>
 
         <nav>
-            <button type="submit" className={styles.submitButton}>Registrate</button>
+            <button type="submit" className={styles.registro}>Registrate</button>
         </nav>
         </form>
     </>

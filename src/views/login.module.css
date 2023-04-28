@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh; /* Esto asegura que el contenedor del formulario ocupe toda la altura de la pantalla */
+    background-color: rgb(40, 39, 39);
   }
 
   .submitButton {
@@ -24,4 +25,11 @@
     height: 100px;
     width: 100px;
   }
+
+  .registro{
+    margin-top: 20px;
+  }
+ 
+  
+
   

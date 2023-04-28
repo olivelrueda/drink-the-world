@@ -52,7 +52,7 @@ export default function Login() {
             <button type="submit" className={styles.submitButton}>Iniciar Sesión</button>
         </div>
 
-        <NavLink to='/registro'>Registrate</NavLink>
+        <NavLink className={styles.registro} to='/registro'>Registrate</NavLink>
         
         </form>
     </>
