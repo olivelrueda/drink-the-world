@@ -1,8 +1,12 @@
 header {
-        display: grid;
+        /* display: grid;
         grid-template-rows: 1fr;
         grid-template-columns: repeat(3, 1fr);
+    */
+    display: flex;
+    justify-content:space-between;
 }
+
 
 .title {
 text-align: center;
@@ -18,12 +22,13 @@ h2{
 }
 
 .martini {
-    height: 120px;
-    width: 120px;
+    height: 200px;
+    width: 200px;
 }
 
 .login {
     font-size: medium;
+    background-color: #f1d86a;
     height: 30px;
     width: 120px;
 }

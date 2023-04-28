@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-
+import { NavLink } from 'react-router-dom'
 import useServer from "../hooks/useServer"
 import styles from './login.module.css'
 
@@ -12,11 +12,16 @@ export default function Login() {
 
         const credentials = Object.fromEntries(new FormData(e.target))
         const { data } = await post({ url: '/users/login', body: credentials })
-        if (data) return navigate('/home')
+        if (data) return navigate('/')
     }
 
     return <>
+       
         <form className={styles.form} onSubmit={handleSubmit}>
+        <img className={styles.isotipo} src="/src/assets/images/4.png" alt="" />
+        <div className={styles.tit}>
+        <h2>Login</h2>
+        </div>
         <div>
             <div className={styles.input}>
             <label htmlFor="email" className={styles.label}>Correo</label>
@@ -43,9 +48,12 @@ export default function Login() {
             </div>
         </div>
 
-        <nav>
+        <div>
             <button type="submit" className={styles.submitButton}>Iniciar Sesión</button>
-        </nav>
+        </div>
+
+        <NavLink to='/registro'>Registrate</NavLink>
+        
         </form>
     </>
 }
