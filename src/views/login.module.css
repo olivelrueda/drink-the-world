@@ -6,17 +6,6 @@
   height: 100vh;
 }
 
-.isotipo{
-  height: 12em;
-  width: 12em;
-  background-color: var(--color-cheers);
-}
-
-h2 {
-  font-size: 2em;
-  margin: 1em;
-}
-
 label {
   font-size: 1.5em;
 }

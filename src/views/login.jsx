@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 import useServer from "../hooks/useServer"
 import styles from './login.module.css'
+import LoginHeader from '../components/LoginHeader'
 
 export default function Login() {
     const { post } = useServer()
@@ -17,8 +18,9 @@ export default function Login() {
 
 return <>
     <form className={styles.form} onSubmit={handleSubmit}>
-        <img className={styles.isotipo} src="/src/assets/images/isotipoCheers.svg" alt="isotipo" />
-        <h2>Inicia sesión</h2>
+        
+        <LoginHeader/>
+
             <div>
                 <label htmlFor="email" className={styles.label}>Correo</label>
                 <input
