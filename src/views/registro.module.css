@@ -1,38 +1,36 @@
 .form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
-    background-color: rgb(40, 39, 39);
-  }
-
-  .submitButton {
-    margin-top: 20px;
-    font-size: medium;
-    height: 30px;
-    width: 120px;
-  }
-
-  .input{
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-
-  }
-
-  .isotipo{
-    height: 100px;
-    width: 100px;
-  }
-
-  .registro{
-    font-size: medium;
-    background-color: #2f2f2e;
-    border-color: goldenrod;
-    height: 30px;
-    width: 120px;
-    margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  background-color: rgb(40, 39, 39);
 }
-  
-  
+
+.submitButton {
+  margin-top: 20px;
+  font-size: medium;
+  height: 30px;
+  width: 120px;
+}
+
+.input{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+
+}
+
+.isotipo{
+  height: 100px;
+  width: 100px;
+}
+
+.registro{
+  font-size: medium;
+  background-color: #2f2f2e;
+  border-color: goldenrod;
+  height: 30px;
+  width: 120px;
+  margin-top: 40px;
+}

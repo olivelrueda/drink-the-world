@@ -1,0 +1,36 @@
+.formulario {
+    /* display: inline-block; */
+}
+
+.formulario label {
+    font-size: 1.5em;
+    margin-right: .1em;
+}
+
+form .filtro {
+    margin-left: 1.5em;
+}
+
+input, select {
+    height: 2em;
+    background-color: var(--color-light);
+    color: var(--color-header);
+    border-radius: 5%;
+}
+
+input:hover, select:hover {
+    border: 2px solid var(--color-cheers);
+}
+
+input:focus, select:focus {
+    box-shadow: 0 1px 1px var(--color-header)inset, 0 0 6px var(--color-cheers);
+    outline: 0 none;
+}
+
+.buscador {
+    width: 15em;
+}
+
+.buscador:focus::placeholder {
+    color: transparent;
+}

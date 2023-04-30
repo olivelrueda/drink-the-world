@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
-import { Link } from 'react-router-dom'
 
 import useServer from "../hooks/useServer"
 import styles from './registro.module.css'
@@ -24,7 +23,7 @@ export default function Registro() {
         <form className={styles.form} onSubmit={handleSubmit}>
         <img className={styles.isotipo} src="/src/assets/images/4.png" alt="" />
 
-        <div><h2>Crear cuenta nueva</h2></div>
+        <div><h2>Crea tu cuenta</h2></div>
         <div>
             <div className={styles.input}>
             <label htmlFor="email" className={styles.label}>Correo</label>

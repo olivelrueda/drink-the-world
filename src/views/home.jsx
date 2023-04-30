@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 
 import Header from "../components/Header"
+import NavBar from "../components/NavBar"
 import useAuth from "../hooks/useAuth"
 import useServer from "../hooks/useServer"
 
@@ -23,7 +24,7 @@ export default function Home() {
         {viajes && <ul className="viajes">
             {viajes.map(viaje => <li key={viaje.id} className="viaje">
             <p>{viaje.place}</p>
-            <p>{user.id === viaje.user_id ? 'Es el dueño del viaje' : 'No es su viaje' }</p>
+            <p>{user && user.id === viaje.user_id ? 'Es el dueño del viaje' : 'No es su viaje' }</p>
             </li>)}
         </ul>}
     </>

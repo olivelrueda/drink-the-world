@@ -16,16 +16,13 @@ export default function Login() {
     }
 
 return <>
-    <div className={styles.container}>
-        <form className={styles.form} onSubmit={handleSubmit}>
-            <img className={styles.isotipo} src="/src/assets/images/4.png" alt="" />
-            <div className={styles.tit}>
-            <h2>Login</h2>
-            </div>
+    <form className={styles.form} onSubmit={handleSubmit}>
+        <img className={styles.isotipo} src="/src/assets/images/isotipoCheers.svg" alt="isotipo" />
+        <h2>Inicia sesión</h2>
             <div>
-                <div className={styles.input}>
                 <label htmlFor="email" className={styles.label}>Correo</label>
                 <input
+                    className={styles.input}
                     id="email"
                     name="email"
                     type="email"
@@ -33,27 +30,24 @@ return <>
                     required
                     placeholder="nombre@ejemplo.com"
                 />
-                </div>
+            </div>
 
-                <div className={styles.input}>
+            <div>
                 <label htmlFor="password" className={styles.label}>Contraseña</label>
                 <input
+                    className={styles.input}
                     id="password"
                     name="pwd"
                     type="password"
                     autoComplete="password"
                     required
                     placeholder="******"
-                />
-                </div>
+            />
             </div>
 
-            <div>
-                <button type="submit" className={styles.submitButton}>Iniciar Sesión</button>
-            </div>
-            <p className={styles.p}> ¿Aun no tienes cuenta?</p>
-            <NavLink className={styles.registro} to='/registro'>Registrate</NavLink>
-        </form>
-    </div>
+        <button type="submit" className={styles.submitButton}>✔</button>
+        <p className={styles.p}> ¿No tienes cuenta?</p>
+        <NavLink className={styles.registro} to='/registro'>¡Regístrate!</NavLink>
+    </form>
 </>
 }

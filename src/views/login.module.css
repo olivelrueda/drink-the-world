@@ -1,43 +1,82 @@
-.container {
-  width: auto;
-  background-color: white;
-}
-
 .form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Esto asegura que el contenedor del formulario ocupe toda la altura de la pantalla */
-  background-color: rgb(40, 39, 39);
-}
-
-.submitButton {
-  margin-top: 20px;
-  font-size: medium;
-  height: 30px;
-  width: 120px;
-}
-
-.input{
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
+  height: 100vh;
 }
 
 .isotipo{
-  height: 100px;
-  width: 100px;
+  height: 12em;
+  width: 12em;
+  background-color: var(--color-cheers);
+}
+
+h2 {
+  font-size: 2em;
+  margin: 1em;
+}
+
+label {
+  font-size: 1.5em;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  height: 2em;
+  background-color: var(--color-light);
+  color: var(--color-header);
+  margin-top: .1em;
+  margin-bottom: 1.5em;
+  border-radius: 5%;
+}
+
+.input:hover {
+  border: 2px solid var(--color-cheers);
+}
+
+.input:focus {
+  box-shadow: 0 1px 1px var(--color-header)inset, 0 0 6px var(--color-cheers);
+  outline: 0 none;
+}
+
+.input:focus::placeholder {
+  color: transparent;
+}
+
+.submitButton {
+  border-radius: 5%;
+  font-size: 1.2em;
+  background-color: var(--color-light);
+  color: var(--color-header);
+  height: 2em;
+  width: 6em;
+  margin-top: 1.5em;
+  margin-bottom: .5em;
+}
+
+.submitButton:hover {
+  border: 2px solid var(--color-cheers);
+}
+
+.submitButton:active {
+  box-shadow: 0 1px 1px var(--color-header)inset, 0 0 8px var(--color-cheers);
+  outline: 0 none;
 }
 
 .p {
+  font-size: 1.2em;
+  margin-top: .1em;
   margin-bottom: 0;
 }
 
 .registro{
-  margin-top: 0px;
+  font-size: 1.2em;
+  margin-top: 0;
+  color: var(--color-cheers);
 }
- 
-  
 
-  
+.registro:hover {
+  text-decoration: underline;
+}

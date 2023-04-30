@@ -2,17 +2,22 @@ import { Link } from 'react-router-dom'
 
 import useAuth from '../hooks/useAuth'
 import styles from './Header.module.css'
-import martiniImg from '../assets/images/3.png'
+import NavBar from './NavBar'
 
 export default function Header() {
     const { isAuthenticated, logout } = useAuth()
 
     return <>
         <header>
-            <img className={styles.martini} src={martiniImg} alt="" />
+            <img className={styles.logotipoCheers} src='src/assets/images/logotipoCheers.svg' alt="logotipo" />
+            <div className={styles.navContainer}>
+                <NavBar/>
+            </div>
+            <button className={styles.login}>
             {isAuthenticated ? 
-                <Link className={styles.login} onClick={logout}>Logout</Link> : 
-                <Link className={styles.login} to='/login'>Login</Link>}
+                    <Link onClick={logout}>Logout</Link> : 
+                    <Link to='/login'>Login</Link>}
+            </button>
         </header>
     </>
 }
