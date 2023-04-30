@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
+import Inputs from '../components/Inputs'
 import useServer from "../hooks/useServer"
 import styles from './login.module.css'
 
@@ -19,31 +20,8 @@ return <>
     <form className={styles.form} onSubmit={handleSubmit}>
         <img className={styles.isotipo} src="/src/assets/images/isotipoCheers.svg" alt="isotipo" />
         <h2>Inicia sesión</h2>
-            <div>
-                <label htmlFor="email" className={styles.label}>Correo</label>
-                <input
-                    className={styles.input}
-                    id="email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
-                    required
-                    placeholder="nombre@ejemplo.com"
-                />
-            </div>
 
-            <div>
-                <label htmlFor="password" className={styles.label}>Contraseña</label>
-                <input
-                    className={styles.input}
-                    id="password"
-                    name="pwd"
-                    type="password"
-                    autoComplete="password"
-                    required
-                    placeholder="******"
-            />
-            </div>
+        <Inputs/>
 
         <button type="submit" className={styles.submitButton}>✔</button>
         <p className={styles.p}> ¿No tienes cuenta?</p>
