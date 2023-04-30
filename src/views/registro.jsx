@@ -3,6 +3,7 @@ import { toast } from 'sonner'
 
 import useServer from "../hooks/useServer"
 import styles from './registro.module.css'
+import Inputs from '../components/Inputs'
 
 export default function Registro() {
     const { post } = useServer()
@@ -24,7 +25,7 @@ export default function Registro() {
         <img className={styles.isotipo} src="/src/assets/images/4.png" alt="" />
 
         <div><h2>Crea tu cuenta</h2></div>
-        <div>
+        {/* <div>
             <div className={styles.input}>
             <label htmlFor="email" className={styles.label}>Correo</label>
             <input
@@ -48,7 +49,9 @@ export default function Registro() {
                 placeholder="******"
             />
             </div>
-        </div>
+        </div> */}
+
+        <Inputs/>
 
         <nav>
             <button type="submit" className={styles.registro}>Regístrate</button>
