@@ -1,6 +1,9 @@
 import { useNavigate } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
+
+import LoginHeader from '../components/LoginHeader'
 import Inputs from '../components/Inputs'
+import Button from '../components/Button'
 import useServer from "../hooks/useServer"
 import styles from './login.module.css'
 
@@ -18,12 +21,9 @@ export default function Login() {
 
 return <>
     <form className={styles.form} onSubmit={handleSubmit}>
-        <img className={styles.isotipo} src="/src/assets/images/isotipoCheers.svg" alt="isotipo" />
-        <h2>Inicia sesión</h2>
-
+        <LoginHeader/>
         <Inputs/>
-
-        <button type="submit" className={styles.submitButton}>✔</button>
+        <Button/>
         <p className={styles.p}> ¿No tienes cuenta?</p>
         <NavLink className={styles.registro} to='/registro'>¡Regístrate!</NavLink>
     </form>

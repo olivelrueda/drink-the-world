@@ -3,7 +3,9 @@ import { toast } from 'sonner'
 
 import useServer from "../hooks/useServer"
 import styles from './registro.module.css'
+import LoginHeader from '../components/LoginHeader'
 import Inputs from '../components/Inputs'
+import Button from '../components/Button'
 
 export default function Registro() {
     const { post } = useServer()
@@ -22,40 +24,9 @@ export default function Registro() {
 
     return <>
         <form className={styles.form} onSubmit={handleSubmit}>
-        <img className={styles.isotipo} src="/src/assets/images/4.png" alt="" />
-
-        <div><h2>Crea tu cuenta</h2></div>
-        {/* <div>
-            <div className={styles.input}>
-            <label htmlFor="email" className={styles.label}>Correo</label>
-            <input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                placeholder="nombre@ejemplo.com"
-            />
-            </div>
-
-            <div className={styles.input}>
-            <label htmlFor="password" className={styles.label}>Contraseña</label>
-            <input
-                id="password"
-                name="pwd"
-                type="password"
-                autoComplete="password"
-                required
-                placeholder="******"
-            />
-            </div>
-        </div> */}
-
-        <Inputs/>
-
-        <nav>
-            <button type="submit" className={styles.registro}>Regístrate</button>
-        </nav>
+            <LoginHeader/>
+            <Inputs/>
+            <Button/>
         </form>
     </>
 /*     Generar toast anunciando que se ha hecho el registro satisfactoria y indicando que deben iniciar sesion que su nueva cuenta 
