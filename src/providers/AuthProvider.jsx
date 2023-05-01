@@ -25,13 +25,18 @@ const AuthProvider = ({ children }) => {
     return setCurrentUser(null)
   }
 
+/*   const editHandler = () =>{
+    localStorage.
+  }
+ */
   const authValues = useMemo(() => {
     return {
       user: currentUser?.user || null,
       token: currentUser?.token,
       isAuthenticated: !!currentUser?.token,
       setUser: setUserHandler,
-      logout: logoutHandler
+      logout: logoutHandler,
+      edit: editHandler,
     }
   })
 
