@@ -1,6 +1,7 @@
 import { toast } from "sonner"
 import useServer from "../hooks/useServer"
 import { useNavigate } from 'react-router-dom'
+import styles from './add.module.css'
 
 export default function Add() {
     const { post } = useServer()
@@ -18,33 +19,33 @@ export default function Add() {
     }
 
     return <>
-        <form onSubmit={handleSubmit}>
+        <form className={styles.formAdd} onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="place">Lugar</label>
-                <input type="text" name="place" id="place" />
+                <input type="text" name="place" id="place" placeholder="¿A dónde fuiste?"/>
             </div>
 
             <div>
-                <label htmlFor="description"></label>
-                <textarea name="description" id="description"></textarea>
+                <label htmlFor="description">Descripción</label>
+                <textarea name="description" id="description" placeholder="Narra tu experiencia"></textarea>
             </div>
 
             <div>
-                <label htmlFor="file1">Archivo 01</label>
+                <label htmlFor="file1">Imagen 01</label>
                 <input type="file" name="file1" id="file1" />
             </div>
 
             <div>
-                <label htmlFor="file2">Archivo 02</label>
+                <label htmlFor="file2">Imagen 02</label>
                 <input type="file" name="file2" id="file2" />
             </div>
 
             <div>
-                <label htmlFor="file3">Archivo 03</label>
+                <label htmlFor="file3">Imagen 03</label>
                 <input type="file" name="file3" id="file3" />
             </div>
 
-            <button type="submit">Crear entrada</button>
+            <button type="submit">Publicar</button>
         </form>
     </>
 }

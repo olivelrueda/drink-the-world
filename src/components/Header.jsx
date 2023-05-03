@@ -10,7 +10,7 @@ export default function Header() {
             <div className={styles.navContainer}>
                 <NavBar/>
             </div>
-            <Button style={{marginRight: "1,25em"}}/>
+            <Button/>
         </header>
     </>
 }

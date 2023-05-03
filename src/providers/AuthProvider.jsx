@@ -25,10 +25,6 @@ const AuthProvider = ({ children }) => {
     return setCurrentUser(null)
   }
 
-/*   const editHandler = () =>{
-    localStorage.
-  }
- */
   const authValues = useMemo(() => {
     return {
       user: currentUser?.user || null,

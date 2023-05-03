@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import TimeAgo from 'javascript-time-ago'
 import es from 'javascript-time-ago/locale/es'
+import { Link } from "react-router-dom"
 
 import Header from "../components/Header"
 import useServer from "../hooks/useServer"
@@ -26,6 +27,7 @@ export default function Home() {
 
     return <>
         <Header />
+       <Link to='/add'><img className={styles.mas} src="../src/assets/images/mas.svg" alt="mas"/></Link>
         {viajes && (
         <ul className={styles.viajes}>
             {viajes.map((viaje) => (

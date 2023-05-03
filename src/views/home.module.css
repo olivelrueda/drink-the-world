@@ -6,7 +6,6 @@
 }
 
 .img {
-    height: 40em;
     width: 40em;
 }
 
@@ -30,4 +29,11 @@
 .votos {
     text-align: right;
     margin: 0;
+}
+
+.mas {
+    height: 2em;
+    width: 6em;
+    float: right;
+    position: fixed;
 }
