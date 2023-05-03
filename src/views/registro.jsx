@@ -24,9 +24,9 @@ export default function Registro() {
 
     return <>
         <form className={styles.form} onSubmit={handleSubmit}>
-            <LoginHeader/>
+            <LoginHeader content="Crea tu cuenta"/>
             <Inputs/>
-            <Button/>
+            <Button buttonContent="Comenzar"/>
         </form>
     </>
 /*     Generar toast anunciando que se ha hecho el registro satisfactoria y indicando que deben iniciar sesion que su nueva cuenta 

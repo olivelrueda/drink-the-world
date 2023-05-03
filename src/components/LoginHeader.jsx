@@ -1,10 +1,13 @@
+import { Link } from 'react-router-dom'
 import styles from './LoginHeader.module.css'
 
-export default function LoginHeader() {
+export default function LoginHeader({content}) {
 
 return <>
-        <img className={styles.isotipo} src="/src/assets/images/isotipoCheers.svg" alt="isotipo" />
-        <h2>Inicia sesión</h2>
+        <Link to="/">
+                <img className={styles.isotipo} src="/src/assets/images/isotipoCheers.svg" alt="isotipo" />
+        </Link>
+        <h2>{content}</h2>
 </>
 
 }

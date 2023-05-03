@@ -8,11 +8,11 @@
 
 .p {
   font-size: 1.2em;
-  margin-top: .1em;
+  margin-top: .8em;
   margin-bottom: 0;
 }
 
-.registro{
+.registro {
   font-size: 1.2em;
   margin-top: 0;
   color: var(--color-cheers);
@@ -20,8 +20,4 @@
 
 .registro:hover {
   text-decoration: underline;
-}
-
-.login {
-  margin-right: 0px;
 }

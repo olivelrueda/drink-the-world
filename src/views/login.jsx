@@ -21,11 +21,11 @@ export default function Login() {
 
 return <>
     <form className={styles.form} onSubmit={handleSubmit}>
-        <LoginHeader/>
+        <LoginHeader content="Inicia sesión"/>
         <Inputs/>
-        <Button/>
+        <Button buttonContent="Ingresar"/>
         <p className={styles.p}> ¿No tienes cuenta?</p>
-        <NavLink className={styles.registro} to='/registro'>¡Regístrate!</NavLink>
+        <NavLink className={styles.registro} to='/registro'>¡Regístrate aquí!</NavLink>
     </form>
 </>
 }

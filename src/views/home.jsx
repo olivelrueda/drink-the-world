@@ -27,7 +27,6 @@ export default function Home() {
 
     return <>
         <Header />
-       <Link to='/add'><img className={styles.mas} src="../src/assets/images/mas.svg" alt="mas"/></Link>
         {viajes && (
         <ul className={styles.viajes}>
             {viajes.map((viaje) => (
