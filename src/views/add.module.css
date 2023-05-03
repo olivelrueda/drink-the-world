@@ -1,7 +1,58 @@
 .formAdd {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     height: 100vh;
 }
+
+
+ .publicar{
+    display: flex;
+    flex-direction: column;
+    height: 2em;
+    background-color: var(--color-light);
+    color: var(--color-header);
+    height: 2em;
+    margin: 2em;
+    border-radius: 5%;
+}
+  
+.publicar:hover {
+    border: 2px solid var(--color-cheers);
+}
+  
+.publicar:focus {
+    box-shadow: 0 1px 1px var(--color-header)inset, 0 0 6px var(--color-cheers);
+    outline: 0 none;
+}
+  
+.publicar:focus::placeholder {
+    color: transparent;
+}
+
+.isotipo {
+    height: 12em;
+    width: 12em;
+    background-color: var(--color-cheers);
+    margin-bottom: 0;
+}
+
+.h2 {
+    color: var(--color-cheers);
+    margin-top: 0;
+}
+
+.fill {
+    margin: 0%;
+}
+
+.text {
+    height: 5em;
+    width: 22em;   
+}
+
+.space{
+    width: 22em;
+}
+
