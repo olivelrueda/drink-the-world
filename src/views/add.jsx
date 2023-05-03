@@ -3,6 +3,8 @@ import useServer from "../hooks/useServer"
 import { useNavigate } from 'react-router-dom'
 import styles from './add.module.css'
 
+
+
 export default function Add() {
     const { post } = useServer()
     const navigate = useNavigate()
@@ -20,32 +22,36 @@ export default function Add() {
 
     return <>
         <form className={styles.formAdd} onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="place">Lugar</label>
-                <input type="text" name="place" id="place" placeholder="¿A dónde fuiste?"/>
-            </div>
+
+            <img className={styles.isotipo} src="/src/assets/images/isotipoCheers.svg" alt="isotipo" />
+            <h2 className={styles.h2}>¡Comparte tu experiencia!</h2>
+            <p className={styles.fill}>
+                <div><label htmlFor="place">Lugar</label></div>
+                <input className={styles.space} type="text" name="place" id="place" placeholder="¿A dónde fuiste?"/>
+            </p>
+
+            <p className={styles.fill}>
+                <div><label htmlFor="description">Descripción</label></div>
+                <textarea className={styles.text} name="description" id="description" placeholder="Narra tu experiencia"></textarea>
+            </p>
 
             <div>
-                <label htmlFor="description">Descripción</label>
-                <textarea name="description" id="description" placeholder="Narra tu experiencia"></textarea>
+                 <label htmlFor="file1">Comparte hasta 3 imágenes</label>
+                
+                    <div><input type="file" name="file1" id="file1" /></div>
+                    
+        {/*                 <label htmlFor="file2">Imagen 02</label>
+        */}         <div><input type="file" name="file2" id="file2" /></div>
+                    
+        {/*                 <label htmlFor="file3">Imagen 03</label>
+        */}         <div><input type="file" name="file3" id="file3" /></div>
+                
+
             </div>
 
-            <div>
-                <label htmlFor="file1">Imagen 01</label>
-                <input type="file" name="file1" id="file1" />
-            </div>
+            <button className={styles.publicar} type="submit">Publicar</button>
+           
 
-            <div>
-                <label htmlFor="file2">Imagen 02</label>
-                <input type="file" name="file2" id="file2" />
-            </div>
-
-            <div>
-                <label htmlFor="file3">Imagen 03</label>
-                <input type="file" name="file3" id="file3" />
-            </div>
-
-            <button type="submit">Publicar</button>
         </form>
     </>
 }
