@@ -1,7 +1,15 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+
 import styles from './NavBar.module.css'
 
 export default function NavBar() {
+
+    const [filtro, setFiltro] = useState('ninguno');
+
+
+const handleFiltroChange = (event) => {
+  setFiltro(event.target.value);
+};
 
 return <>
         <form action="" className={styles.formulario}>
@@ -9,14 +17,21 @@ return <>
                 <input type="search" name="search" className={styles.buscador} placeholder="¿Un tragito?" />
 
             <label htmlFor="filtro" className={styles.filtro}>Filtrar</label>
-                <select name="filtro">
+                <select name="filtro" value="filtro" onChange={handleFiltroChange}>
                     <option value="ninguno">---</option>
-                    <option value="lugar">Lugar</option>
-                    <option value="fecha">Fecha</option>
-                    <option value="votos">Votos</option>
+                    <optgroup label="Lugar">
+                        <option value="abc">A - Z</option>
+                    </optgroup>
+                    <optgroup label="Fecha">
+                        <option value="reciente">Reciente</option>
+                        <option value="antiguo">Antigüo</option>
+                    </optgroup>
+                    <optgroup label="Votos">
+                        <option value="masVotado">➕ Votado</option>
+                        <option value="menosVotado">➖ Votado</option>
+                    </optgroup> 
                 </select>
         </form>
-        <label className={styles.labelMas} htmlFor="mas">Publicar</label>
-            <Link to='/add'><img className={styles.mas} src="../src/assets/images/mas.svg" alt="mas"/></Link>
     </>
-}  
+} 
+

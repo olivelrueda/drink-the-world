@@ -34,25 +34,3 @@ input:focus, select:focus {
 .buscador:focus::placeholder {
     color: transparent;
 }
-
-.labelMas {
-    margin-left: 1.5em;
-    padding-right: .2em;
-}
-
-.mas {
-    height: 2em;
-    width: 2em;
-    border-radius: 100%;
-    box-sizing: border-box;
-}
-
-.mas:hover {
-    border: 2px solid var(--color-cheers);
-    margin: 0px;
-}
-
-.mas:hover:active {
-    box-shadow: 0 1px 1px var(--color-header)inset, 0 0 8px var(--color-cheers);
-    outline: 0 none;
-}

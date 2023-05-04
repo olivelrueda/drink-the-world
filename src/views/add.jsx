@@ -27,26 +27,19 @@ export default function Add() {
             <h2 className={styles.h2}>¡Comparte tu experiencia!</h2>
             <p className={styles.fill}>
                 <div><label htmlFor="place">Lugar</label></div>
-                <input className={styles.space} type="text" name="place" id="place" placeholder="¿A dónde fuiste?"/>
+                <input className={styles.space} type="text" name="place" id="place" placeholder="¿A dónde fuiste?" required/>
             </p>
 
             <p className={styles.fill}>
                 <div><label htmlFor="description">Descripción</label></div>
-                <textarea className={styles.text} name="description" id="description" placeholder="Narra tu experiencia"></textarea>
+                <textarea className={styles.text} name="description" id="description" placeholder="Narra tu experiencia" required></textarea>
             </p>
 
             <div>
                  <label htmlFor="file1">Comparte hasta 3 imágenes</label>
-                
-                    <div><input type="file" name="file1" id="file1" /></div>
-                    
-        {/*                 <label htmlFor="file2">Imagen 02</label>
-        */}         <div><input type="file" name="file2" id="file2" /></div>
-                    
-        {/*                 <label htmlFor="file3">Imagen 03</label>
-        */}         <div><input type="file" name="file3" id="file3" /></div>
-                
-
+                    <div><input type="file" name="file1" id="file1" required/></div>
+                    <div><input type="file" name="file2" id="file2" /></div>
+                    <div><input type="file" name="file3" id="file3" /></div>
             </div>
 
             <button className={styles.publicar} type="submit">Publicar</button>

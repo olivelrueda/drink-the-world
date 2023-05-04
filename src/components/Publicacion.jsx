@@ -1,9 +1,11 @@
 import { apiURL } from "../config"
 import useAuth from "../hooks/useAuth"
+import Stars from "./Stars"
 
-function Publicacion({viaje, timeAgo, styles}) {
+export default function Publicacion({viaje, timeAgo, styles}) {
     const { user } = useAuth()
     return <li>
+    <Stars/> 
     <h2 className={styles.place}>{viaje.place}</h2>
     <h3 className={styles.date}>{timeAgo.format(new Date(viaje.date))}</h3>
     {viaje.photo && (
@@ -16,9 +18,7 @@ function Publicacion({viaje, timeAgo, styles}) {
     </div>
     )}
     <p className={styles.description}>{viaje.description}</p>
-    <h4 className={styles.votos}>{viaje.votes}</h4>
-    <p className={styles.space}>{user && user.id === viaje.user_id ? "Es tu viaje" : "No es su viaje"}</p>
+    <h4 className={styles.votos}>{Number.parseInt(viaje.votes)}</h4>
+    {/* <p className={styles.space}>{user && user.id === viaje.user_id ? "Es tu viaje" : "No es su viaje"}</p> */}
 </li>    
 }
-
-export default Publicacion
