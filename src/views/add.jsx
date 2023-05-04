@@ -40,13 +40,9 @@ export default function Add() {
                 
                     <div><input type="file" name="file1" id="file1" /></div>
                     
-        {/*                 <label htmlFor="file2">Imagen 02</label>
-        */}         <div><input type="file" name="file2" id="file2" /></div>
+                    <div><input type="file" name="file2" id="file2" /></div>
                     
-        {/*                 <label htmlFor="file3">Imagen 03</label>
-        */}         <div><input type="file" name="file3" id="file3" /></div>
-                
-
+                    <div><input type="file" name="file3" id="file3" /></div>
             </div>
 
             <button className={styles.publicar} type="submit">Publicar</button>
