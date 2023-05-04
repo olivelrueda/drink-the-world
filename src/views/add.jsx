@@ -37,8 +37,16 @@ export default function Add() {
 
             <div>
                  <label htmlFor="file1">Comparte hasta 3 imágenes</label>
+<<<<<<< HEAD
                     <div><input type="file" name="file1" id="file1" required/></div>
                     <div><input type="file" name="file2" id="file2" /></div>
+=======
+                
+                    <div><input type="file" name="file1" id="file1" /></div>
+                    
+                    <div><input type="file" name="file2" id="file2" /></div>
+                    
+>>>>>>> d746b524ac1e5fa65f3628c12d16972e1a5fa542
                     <div><input type="file" name="file3" id="file3" /></div>
             </div>
 
