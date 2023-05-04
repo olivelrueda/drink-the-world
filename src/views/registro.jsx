@@ -6,6 +6,8 @@ import styles from './registro.module.css'
 import LoginHeader from '../components/LoginHeader'
 import Inputs from '../components/Inputs'
 import Button from '../components/Button'
+import BackHome from '../components/BackHome'
+
 
 export default function Registro() {
     const { post } = useServer()
@@ -23,6 +25,7 @@ export default function Registro() {
     }
 
     return <>
+        <BackHome/>
         <form className={styles.form} onSubmit={handleSubmit}>
             <LoginHeader content="Crea tu cuenta"/>
             <Inputs/>

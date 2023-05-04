@@ -1,6 +1,7 @@
 import { toast } from "sonner"
 import useServer from "../hooks/useServer"
 import { useNavigate } from 'react-router-dom'
+import BackHome from '../components/BackHome'
 import styles from './add.module.css'
 
 
@@ -21,6 +22,7 @@ export default function Add() {
     }
 
     return <>
+        <BackHome/>
         <form className={styles.formAdd} onSubmit={handleSubmit}>
 
             <img className={styles.isotipo} src="/src/assets/images/isotipoCheers.svg" alt="isotipo" />
@@ -43,8 +45,6 @@ export default function Add() {
             </div>
 
             <button className={styles.publicar} type="submit">Publicar</button>
-           
-
         </form>
     </>
 }

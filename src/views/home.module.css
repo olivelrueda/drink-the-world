@@ -2,10 +2,10 @@
     height: 3em;
     width: 3em;
     border-radius: 100%;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     position: fixed;
     right: 3.25em;
-    margin-top: 3.25em;
+    bottom: 3.25em;
 }
 
 .mas:hover {

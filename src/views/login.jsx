@@ -6,6 +6,7 @@ import Inputs from '../components/Inputs'
 import Button from '../components/Button'
 import useServer from "../hooks/useServer"
 import styles from './login.module.css'
+import BackHome from '../components/BackHome'
 
 export default function Login() {
     const { post } = useServer()
@@ -20,6 +21,7 @@ export default function Login() {
     }
 
 return <>
+    <BackHome/>
     <form className={styles.form} onSubmit={handleSubmit}>
         <LoginHeader content="Inicia sesión"/>
         <Inputs/>
