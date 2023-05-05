@@ -12,11 +12,21 @@ export default function Publicacion({viaje, timeAgo, styles}) {
         <div key={photo.id}>
             <img className={styles.img} src={`${apiURL}/${photo.photo}`} alt="imagen del viaje" />
         </div>
-        ))}
-    </div>
-    )}
-    <p className={styles.description}>{viaje.description}</p>
-    <h4 className={styles.votos}>{Number.parseInt(viaje.votes)}</h4>
-    {/* <p className={styles.space}>{user && user.id === viaje.user_id ? "Es tu viaje" : "No es su viaje"}</p> */}
-</li>    
+      )}
+      <p className={styles.description}>{viaje.description}</p>
+      {new Array(5).fill(0).map((_, i) => (
+        <button
+          key={i}
+          onClick={() => {
+            submitVote(i + 1);
+          }}
+        >
+          {i + 1}
+        </button>
+      ))}
+      {/* <h4 className={styles.votos}>{Number.parseInt(viaje.votes)}</h4> */}
+      {/* <StartRanking/> */}
+      {/* <p className={styles.space}>{user && user.id === viaje.user_id ? "Es tu viaje" : "No es su viaje"}</p> */}
+    </li>
+  );
 }

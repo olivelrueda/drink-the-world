@@ -1,0 +1,11 @@
+.casa {
+    font-size: .7em;
+    color: var(--color-header);
+    height: 2em;
+    margin-left: 1.5em;
+    margin-top: 1.5em;
+}
+  
+.casa:hover {
+    transform: scale(1.2);
+}

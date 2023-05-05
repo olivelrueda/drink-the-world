@@ -1,37 +1,56 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import styles from './NavBar.module.css'
+import styles from './NavBar.module.css';
 
-export default function NavBar() {
+export default function NavBar({ handleUpdateFilters }) {
 
-    const [filtro, setFiltro] = useState('ninguno');
+  const [keyword, setKeyword] = useState('');
+  const [orderBy, setOrderBy] = useState('date');
+  const [sorting, setSorting] = useState('ASC');
 
-
-const handleFiltroChange = (event) => {
-  setFiltro(event.target.value);
-};
-
-return <>
-        <form action="" className={styles.formulario}>
-            <label htmlFor="search">Buscar</label>
-                <input type="search" name="search" className={styles.buscador} placeholder="¿Un tragito?" />
-
-            <label htmlFor="filtro" className={styles.filtro}>Filtrar</label>
-                <select name="filtro" value="filtro" onChange={handleFiltroChange}>
-                    <option value="ninguno">---</option>
-                    <optgroup label="Lugar">
-                        <option value="abc">A - Z</option>
-                    </optgroup>
-                    <optgroup label="Fecha">
-                        <option value="reciente">Reciente</option>
-                        <option value="antiguo">Antigüo</option>
-                    </optgroup>
-                    <optgroup label="Votos">
-                        <option value="masVotado">➕ Votado</option>
-                        <option value="menosVotado">➖ Votado</option>
-                    </optgroup> 
-                </select>
-        </form>
-    </>
-} 
-
+  return (
+    <form action="" className={styles.formulario}>
+      <label htmlFor="search">Buscar</label>
+      <input
+        type="search"
+        name="search"
+        className={styles.buscador}
+        placeholder="¿Un tragito?"
+        value={keyword}
+        onChange={(e) => {
+          setKeyword(e.target.value);
+        }}
+      />
+      <label htmlFor="filtro" className={styles.filtro}>
+        Filtrar
+      </label>
+      <select
+        name="orderBy"
+        value={orderBy}
+        className={styles.order}
+        onChange={(e) => {
+          setOrderBy(e.target.value);
+        }}
+      >
+        <option value="date">Fecha</option>
+        <option value="votes">Votos</option>
+      </select>
+      <select
+        name="sorting"
+        value={sorting}
+        className={styles.order}
+        onChange={(e) => {
+          setSorting(e.target.value);
+        }}
+      >
+        <option value="ASC">Ascendente</option>
+        <option value="DESC">Descendente</option>
+      </select>
+      <div className={styles.lupaContainer}>
+        <img src="../src/assets/images/lupa.svg" alt="lupa" className={styles.lupa} onClick={() => {
+        handleUpdateFilters(keyword, orderBy, sorting);
+        }}/>
+      </div>
+    </form>
+  );
+}

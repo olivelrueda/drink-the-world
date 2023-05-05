@@ -14,10 +14,6 @@ header {
     background-color: var(--color-cheers);
 }
 
-.navContainer {
-    display: flex;
-}
-
 .buttonContainer {
     margin-right: 1.25rem;
 }

@@ -1,7 +1,3 @@
-.formulario {
-    /* display: inline-block; */
-}
-
 .formulario label {
     font-size: 1.5em;
     margin-right: .2em;
@@ -9,6 +5,11 @@
 
 form .filtro {
     margin-left: 1.5em;
+}
+
+.order {
+    height: 2em;
+    margin-right: .2em;
 }
 
 input, select {
@@ -33,4 +34,20 @@ input:focus, select:focus {
 
 .buscador:focus::placeholder {
     color: transparent;
+}
+
+.lupaContainer {
+    display: inline-block;
+    position: relative;
+  }
+  
+.lupa {
+    font-size: .7em;
+    color: var(--color-header);
+    height: 2em;
+    margin-left: 1em;
+}
+  
+.lupaContainer:hover .lupa {
+    transform: scale(1.2);
 }
