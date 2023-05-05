@@ -1,12 +1,11 @@
 import { useMemo, useState } from "react"
+
 import AuthContext from "../contexts/AuthContext.js"
 import isEmpty from "../helpers/isEmpty.js"
 
 const AuthProvider = ({ children }) => {
   const localUser = JSON.parse(localStorage.getItem('user')) || {}
   const [currentUser, setCurrentUser] = useState(localUser)
-
-  // console.log(currentUser)
 
   const setUserHandler = (user = {}) => {
     if (isEmpty(user)) return

@@ -1,7 +1,7 @@
 label {
     font-size: 1.5em;
 }
-  
+
 .input {
     display: flex;
     flex-direction: column;
@@ -12,16 +12,16 @@ label {
     margin-bottom: 1.5em;
     border-radius: 5%;
 }
-  
+
 .input:hover {
     border: 2px solid var(--color-cheers);
 }
-  
+
 .input:focus {
     box-shadow: 0 1px 1px var(--color-header)inset, 0 0 6px var(--color-cheers);
     outline: 0 none;
 }
-  
+
 .input:focus::placeholder {
     color: transparent;
 }

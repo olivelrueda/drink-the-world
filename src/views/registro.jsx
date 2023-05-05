@@ -8,7 +8,6 @@ import Inputs from '../components/Inputs'
 import Button from '../components/Button'
 import BackHome from '../components/BackHome'
 
-
 export default function Registro() {
     const { post } = useServer()
     const navigate = useNavigate()
@@ -19,7 +18,7 @@ export default function Registro() {
         const credentials = Object.fromEntries(new FormData(e.target))
         const { data } = await post({ url: '/users', body: credentials })
         if (data) {
-            toast.success('Se ha creado el usuario, por favor inicia sesión')
+            toast.success('Se ha creado el usuario, inicia sesión para empezar')
             return navigate('/login')
         }
     }
@@ -32,5 +31,4 @@ export default function Registro() {
             <Button buttonContent="Comenzar"/>
         </form>
     </>
-/*     Generar toast anunciando que se ha hecho el registro satisfactoria y indicando que deben iniciar sesion que su nueva cuenta 
- */}
+}

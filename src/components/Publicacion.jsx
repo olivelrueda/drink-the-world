@@ -3,30 +3,29 @@ import { useState } from 'react';
 
 import useAuth from '../hooks/useAuth';
 import useServer from '../hooks/useServer';
-// import StartRanking from "./StartRanking"
 
 export default function Publicacion({ viaje, timeAgo, styles }) {
-  const { user } = useAuth();
-  const [votesCounter, setVotesCounter] = useState(viaje.map);
 
+  const { user, isAuthenticated } = useAuth();
+  const [filledStars, setFilledStars] = useState(0);
   const { post } = useServer();
 
   const submitVote = async (score) => {
     const { data } = await post({
       url: `/entries/${viaje.id}/votes`,
-      body: { vote: score },
-      hasImage: false,
+      body: { vote: score }
     });
     console.log('vote response', data);
   };
 
+  const userSvg = <img src="/src/assets/images/user.svg" alt="svg de usuario" style={{height: "1em", width:"1em"}}/>;
+  const starArray = Array(5).fill(null);
+
   return (
     <li>
       <h2 className={styles.place}>{viaje.place}</h2>
-      <p>
-        {user && user.id === viaje.user_id ? 'PUEDES VOTAR' : 'NO PUEDES VOTAR'}
-      </p>
       <h3 className={styles.date}>{timeAgo.format(new Date(viaje.date))}</h3>
+      <p className={styles.mail}>{userSvg} {viaje.email}</p>
       {viaje.photo && (
         <div>
           {viaje.photo.map((photo) => (
@@ -41,19 +40,19 @@ export default function Publicacion({ viaje, timeAgo, styles }) {
         </div>
       )}
       <p className={styles.description}>{viaje.description}</p>
-      {new Array(5).fill(0).map((_, i) => (
-        <button
-          key={i}
-          onClick={() => {
-            submitVote(i + 1);
-          }}
-        >
-          {i + 1}
-        </button>
-      ))}
-      {/* <h4 className={styles.votos}>{Number.parseInt(viaje.votes)}</h4> */}
-      {/* <StartRanking/> */}
-      {/* <p className={styles.space}>{user && user.id === viaje.user_id ? "Es tu viaje" : "No es su viaje"}</p> */}
+      <div className={styles.starContainer}>
+        {(isAuthenticated && (user && user.id === viaje.user_id ? null : starArray.map((_, i) => (
+          <img
+            src={i < filledStars ? '/src/assets/images/starFill.svg' : '/src/assets/images/star.svg'}
+            className={styles.star}
+            key={i}
+            onClick={() => {
+              setFilledStars(i + 1);
+              submitVote(i + 1);
+            }}
+          />
+        ))))}
+      </div>
     </li>
   );
 }

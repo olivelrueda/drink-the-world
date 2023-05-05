@@ -1,11 +1,10 @@
 .login {
-    border-radius: 5%;
-    /* margin-right: 1.25rem; */
     font-size: 1.2em;
-    background-color: var(--color-light);
-    color: var(--color-header);
     height: 2em;
     width: 6em;
+    background-color: var(--color-light);
+    color: var(--color-header);
+    border-radius: 5%;
 }
 
 .login:hover {

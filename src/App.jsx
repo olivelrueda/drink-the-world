@@ -2,7 +2,6 @@ import { Route, Routes } from 'react-router-dom'
 import Notifications from './components/Notifications'
 import Add from './views/add'
 
-// Views
 import Home from './views/home'
 import Login from './views/login'
 import Registro from './views/registro'

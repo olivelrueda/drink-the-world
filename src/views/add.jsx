@@ -1,10 +1,12 @@
 import { toast } from "sonner"
-import useServer from "../hooks/useServer"
 import { useNavigate } from 'react-router-dom'
+
+import useServer from "../hooks/useServer"
 import BackHome from '../components/BackHome'
+import LoginHeader from "../components/LoginHeader"
+import Button from '../components/Button'
+
 import styles from './add.module.css'
-
-
 
 export default function Add() {
     const { post } = useServer()
@@ -16,7 +18,7 @@ export default function Add() {
         const newEntry = new FormData(e.target)
         const { data } = await post({ url: '/entries', body: newEntry, hasImage: true })
         if (data.status === 'ok') {
-            toast.success('Se ha creado la entrada, Felicitaciones!')
+            toast.success('Se ha creado tu publicación')
             return navigate('/')
         }
     }
@@ -24,27 +26,25 @@ export default function Add() {
     return <>
         <BackHome/>
         <form className={styles.formAdd} onSubmit={handleSubmit}>
+            <LoginHeader content="Comparte tu experiencia"/>
 
-            <img className={styles.isotipo} src="/src/assets/images/isotipoCheers.svg" alt="isotipo" />
-            <h2 className={styles.h2}>¡Comparte tu experiencia!</h2>
-            <p className={styles.fill}>
-                <div><label htmlFor="place">Lugar</label></div>
+            <div className={styles.fill}>
+                <label htmlFor="place">Lugar</label>
                 <input className={styles.space} type="text" name="place" id="place" placeholder="¿A dónde fuiste?" required/>
-            </p>
-
-            <p className={styles.fill}>
-                <div><label htmlFor="description">Descripción</label></div>
-                <textarea className={styles.text} name="description" id="description" placeholder="Narra tu experiencia" required></textarea>
-            </p>
-
-            <div>
-                 <label htmlFor="file1">Comparte hasta 3 imágenes</label>
-                    <div><input type="file" name="file1" id="file1" required/></div>
-                    <div><input type="file" name="file2" id="file2" /></div>
-                    <div><input type="file" name="file3" id="file3" /></div>
             </div>
 
-            <button className={styles.publicar} type="submit">Publicar</button>
+            <div className={styles.fill}>
+                <label htmlFor="description">Descripción</label>
+                <textarea className={styles.space} name="description" id="description" placeholder="¿Cómo fue?" required></textarea>
+            </div>
+
+            <div className={styles.fill}>
+                <label htmlFor="file1">Sube tus imágenes</label>
+                <input className={styles.space} type="file" name="file1" id="file1" required/>
+                <input className={styles.space} type="file" name="file2" id="file2" />
+                <input className={styles.space} type="file" name="file3" id="file3" />
+            </div>
+            <Button buttonContent="Publicar"/>
         </form>
     </>
 }

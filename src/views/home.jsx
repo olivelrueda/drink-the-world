@@ -27,11 +27,6 @@ export default function Home() {
     setViajes(data);
   };
 
-  const searchHandleSubmit = (e) => {
-    e.preventDefault();
-    getViajes();
-  };
-
   useEffect(() => {
     getViajes();
   }, []);

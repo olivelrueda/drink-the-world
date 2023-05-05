@@ -7,12 +7,11 @@ export default function Inputs() {
             <label htmlFor="email" className={styles.label}>Correo</label>
             <input
                 className={styles.input}
-                id="email"
                 name="email"
                 type="email"
                 autoComplete="email"
                 required
-                placeholder="nombre@ejemplo.com"
+                placeholder="correo@ejemplo.com"
             />
         </div>
 
@@ -20,7 +19,6 @@ export default function Inputs() {
             <label htmlFor="password" className={styles.label}>Contraseña</label>
             <input
                 className={styles.input}
-                id="password"
                 name="pwd"
                 type="password"
                 autoComplete="password"

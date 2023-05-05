@@ -2,7 +2,6 @@
     height: 3em;
     width: 3em;
     border-radius: 100%;
-    /* box-sizing: border-box; */
     position: fixed;
     right: 3.25em;
     bottom: 3.25em;
@@ -11,6 +10,7 @@
 .mas:hover {
     border: 2px solid var(--color-cheers);
     margin: 0px;
+    background-color: var(--color-light);
 }
 
 .mas:hover:active {
@@ -33,6 +33,10 @@
     margin: 0;
 }
 
+.mail {
+    margin: 0px;
+}
+
 .img {
     width: 50em;
     padding-top: .5em;
@@ -46,16 +50,20 @@
 
 .description {
     font-size: 1.2em;
+    max-width: 41.6em;
     margin: 0;
-
 }
 
 .space {
     margin-bottom: 2.5em;
 }
 
-.votos {
-    text-align: right;
-    font-size: 1.2em;
-    margin: 0;
+.starContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.star {
+    height: 2em;
+    width: 2em;
 }

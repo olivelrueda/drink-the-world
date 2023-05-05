@@ -21,9 +21,8 @@ export default function NavBar({ handleUpdateFilters }) {
           setKeyword(e.target.value);
         }}
       />
-      <label htmlFor="filtro" className={styles.filtro}>
-        Filtrar
-      </label>
+
+      <label htmlFor="filtro" className={styles.filtro}>Filtrar</label>
       <select
         name="orderBy"
         value={orderBy}
@@ -32,6 +31,7 @@ export default function NavBar({ handleUpdateFilters }) {
           setOrderBy(e.target.value);
         }}
       >
+
         <option value="date">Fecha</option>
         <option value="votes">Votos</option>
       </select>
@@ -43,9 +43,11 @@ export default function NavBar({ handleUpdateFilters }) {
           setSorting(e.target.value);
         }}
       >
-        <option value="ASC">Ascendente</option>
-        <option value="DESC">Descendente</option>
+
+        <option value="DESC">Reciente</option>
+        <option value="ASC">Antigüo</option>
       </select>
+
       <div className={styles.lupaContainer}>
         <img src="../src/assets/images/lupa.svg" alt="lupa" className={styles.lupa} onClick={() => {
         handleUpdateFilters(keyword, orderBy, sorting);

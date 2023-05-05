@@ -1,23 +1,28 @@
 import { apiURL } from '../config.js';
 
-async function httpService({ url, method = 'GET', token = null, body = null, hasImage = false }) {
+async function httpService({
+  url,
+  method = 'GET',
+  token = null,
+  body = null,
+  hasImage = false,
+}) {
   if (!url.startsWith('/')) throw new Error('URL Must Start With a Slash (/)');
 
   const fullURL = new URL(apiURL + url);
   const config = {
     method,
     headers: {
-      Accept: 'application/json'
+      Accept: 'application/json',
     },
   };
-  
+
   if (!hasImage) {
-    config.headers['Content-Type'] = 'application/json'
+    config.headers['Content-Type'] = 'application/json';
   }
-  
-  
+
   if (token) {
-    console.log({token})
+    console.log({ token });
     config.headers.Authorization = token;
   }
 

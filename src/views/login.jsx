@@ -5,8 +5,9 @@ import LoginHeader from '../components/LoginHeader'
 import Inputs from '../components/Inputs'
 import Button from '../components/Button'
 import useServer from "../hooks/useServer"
-import styles from './login.module.css'
 import BackHome from '../components/BackHome'
+
+import styles from './login.module.css'
 
 export default function Login() {
     const { post } = useServer()
