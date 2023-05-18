@@ -1,14 +1,9 @@
 import { apiURL } from "../config"
-import useAuth from "../hooks/useAuth"
-<<<<<<< HEAD
+import { useState } from "react";
 
-import useAuth from '../hooks/useAuth';
+import useAuth from "../hooks/useAuth"
+import Button from './Button'
 import useServer from '../hooks/useServer';
-=======
-import useServer from "../hooks/useServer"
-import { useState } from "react"
-import Button from "./Button";
->>>>>>> 8035101f0f77fd96a168fe7d3fd5dae42df0fe58
 
 export default function Publicacion({ viaje, timeAgo, styles }) {
 
