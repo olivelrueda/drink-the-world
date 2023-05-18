@@ -1,8 +1,14 @@
 import { apiURL } from "../config"
 import useAuth from "../hooks/useAuth"
+<<<<<<< HEAD
 
 import useAuth from '../hooks/useAuth';
 import useServer from '../hooks/useServer';
+=======
+import useServer from "../hooks/useServer"
+import { useState } from "react"
+import Button from "./Button";
+>>>>>>> 8035101f0f77fd96a168fe7d3fd5dae42df0fe58
 
 export default function Publicacion({ viaje, timeAgo, styles }) {
 
@@ -14,8 +20,16 @@ export default function Publicacion({ viaje, timeAgo, styles }) {
     const { data } = await post({
       url: `/entries/${viaje.id}/votes`,
       body: { vote: score }
+ 
     });
-    console.log('vote response', data);
+  };
+
+  const editarTexto = async (cambios) => {
+    const { data } = await patch({
+      url: `/entries/${viaje.id}/`,
+      body: { message: changes}
+    });
+    console.log('modify', data)
   };
 
   const userSvg = <img src="/src/assets/images/user.svg" alt="svg de usuario" style={{height: "1em", width:"1em"}}/>;
@@ -53,6 +67,14 @@ export default function Publicacion({ viaje, timeAgo, styles }) {
           />
         ))))}
       </div>
+
+      <div className={styles.editar}>
+       
+         {(isAuthenticated && (user && user.id === viaje.user_id && (
+          <Button buttonContent='Editar' />)
+          ))} 
+      </div>
+
     </li>
   );
 }
